@@ -16,6 +16,8 @@ import javax.swing.JCheckBox;
 import javax.swing.JList;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class conn {
 
@@ -24,7 +26,9 @@ public class conn {
 	private JTextField txtNomEtPrenom;
 	private JTextField txtMotDePasse;
 	private JLabel lblNewLabel;
+	private JButton btnJouer;
 	private JPanel panel;
+	public JFrame frame2;
 
 	/**
 	 * Launch the application.
@@ -100,9 +104,25 @@ public class conn {
 		lblNewLabel.setBounds(329, 117, 66, 123);
 		frame1.getContentPane().add(lblNewLabel);
 		
+		btnJouer = new JButton("Jouer");
+		btnJouer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// Créez une instance de votre deuxième cadre (conn)
+		        page1 nouvellePage1 = new page1();
+		        frame1.dispose();
+		        // Rendez le deuxième cadre visible
+		        nouvellePage1.frame2.setVisible(true);
+			}
+		});
+		btnJouer.setForeground(Color.WHITE);
+		btnJouer.setFont(new Font("Inter", Font.PLAIN, 20));
+		btnJouer.setBackground(new Color(65, 105, 225));
+		btnJouer.setBounds(302, 468, 120, 33);
+		frame1.getContentPane().add(btnJouer);
+		
 		panel = new JPanel();
-		panel.setBackground(new Color(119, 136, 153));
-		panel.setBounds(221, 142, 283, 340);
+		panel.setBackground(new Color(105, 105, 105));
+		panel.setBounds(226, 138, 273, 397);
 		frame1.getContentPane().add(panel);
 		frame1.setBounds(100, 100, 739, 653);
 		//  lorsque l'utilisateur ferme la fenêtre frame1, elle sera masquée et libérée de la mémoire, mais l'application principale (projet) continuera de s'exécuter.
