@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Point;
+import java.awt.Window;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
@@ -17,10 +18,14 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class page2 {
 
 	JFrame frame3;
+	public JFrame frame4;
 	private JTextField txtRpartirTes;
 	private JTextField textField_1;
 	private JTextField txtLaBibliothque;
@@ -650,59 +655,7 @@ public class page2 {
 		// Add the JLabel to the frame
 		frame3.getContentPane().add(lblImage1_11_5);
 	
-		/*
 		
-		// Méthode pour déplacer un combattant vers une zone spécifique
-	    private void deplacerCombattant(int ancienneZone, int nouvelleZone) {
-	        // Mettez à jour le compteur de la zone précédente
-	        switch (ancienneZone) {
-	            case 1:
-	                nbCombattantsZone1--;
-	                textField_1.setText("Nombre de combattants : " + nbCombattantsZone1);
-	                break;
-	            case 2:
-	                nbCombattantsZone2--;
-	                textField_2.setText("Nombre de combattants : " + nbCombattantsZone2);
-	                break;
-	            case 3:
-	                nbCombattantsZone3--;
-	                textField_3.setText("Nombre de combattants : " + nbCombattantsZone3);
-	                break;
-	            case 4:
-	                nbCombattantsZone4--;
-	                textField.setText("Nombre de combattants : " + nbCombattantsZone4);
-	                break;
-	            case 5:
-	                nbCombattantsZone5--;
-	                textField_4.setText("Nombre de combattants : " + nbCombattantsZone5);
-	                break;
-	        }
-
-	        // Mettez à jour le compteur de la nouvelle zone
-	        switch (nouvelleZone) {
-	            case 1:
-	                nbCombattantsZone1++;
-	                textField_1.setText( Integer.toString(nbCombattantsZone1));
-	                break;
-	            case 2:
-	                nbCombattantsZone2++;
-	                textField_2.setText(Integer.toString(nbCombattantsZone3));
-	                break;
-	            case 3:
-	                nbCombattantsZone3++;
-	                textField_3.setText(Integer.toString(nbCombattantsZone3));
-	                break;
-	            case 4:
-	                nbCombattantsZone4++;
-	                textField.setText(Integer.toString(nbCombattantsZone4));
-	                break;
-	            case 5:
-	                nbCombattantsZone5++;
-	                textField_4.setText(Integer.toString(nbCombattantsZone5));
-	                break;
-	        }
-	   
-	    */
 
 		textField_1 = new JTextField();
 		textField_1.setBounds(308, 482, 50, 40);
@@ -859,5 +812,40 @@ public class page2 {
 		lblNewLabel.setIcon(new ImageIcon(page2.class.getResource("/images/page4.png")));
 		lblNewLabel.setBounds(487, 93, 475, 370);
 		frame3.getContentPane().add(lblNewLabel);
+		
+		JButton btnRetour = new JButton("Retour");
+		btnRetour.addActionListener(new ActionListener() {
+	        	public void actionPerformed(ActionEvent e) {
+	        	
+	        		// Créez une instance de votre deuxième cadre (conn)
+			        page1 nouvellepage = new page1();
+			        frame3.dispose();
+			        // Rendez le deuxième cadre visible
+			        nouvellepage.frame2.setVisible(true);
+	        	}
+	        });
+		btnRetour.setForeground(Color.WHITE);
+		btnRetour.setFont(new Font("Inter", Font.PLAIN, 20));
+		btnRetour.setBackground(Color.GRAY);
+		btnRetour.setBounds(133, 374, 173, 65);
+		frame3.getContentPane().add(btnRetour);
+		
+		JButton btnJouer = new JButton("Jouer");
+		btnJouer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// Créez une instance de votre deuxième cadre (conn)
+		        page3 nouvellepage = new page3();
+		        
+				frame3.dispose();
+		        // Rendez le deuxième cadre visible
+		        nouvellepage.frame4.setVisible(true);
+
+			}
+		});
+		btnJouer.setForeground(Color.WHITE);
+		btnJouer.setFont(new Font("Inter", Font.PLAIN, 20));
+		btnJouer.setBackground(Color.GRAY);
+		btnJouer.setBounds(1135, 374, 173, 65);
+		frame3.getContentPane().add(btnJouer);
 	}
 }

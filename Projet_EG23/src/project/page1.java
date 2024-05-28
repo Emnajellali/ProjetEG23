@@ -334,7 +334,7 @@ public class page1 {
         frame2.getContentPane().add(txtAffecterLesPoints);
 
         // Configuration de la fenêtre principale
-        frame2.setBounds(100, 100, 1291, 753);
+        frame2.setBounds(100, 100, 1236, 753);
         frame2.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 

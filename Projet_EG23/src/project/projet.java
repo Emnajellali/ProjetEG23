@@ -65,7 +65,7 @@ public class projet {
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setAlwaysOnTop(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setBounds(100, 100, 735, 650);
+		frame.setBounds(100, 100, 728, 666);
 		frame.getContentPane().setLayout(null);
 		
 		txtLaBatailleDes = new JTextField();
@@ -113,7 +113,7 @@ public class projet {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(projet.class.getResource("/images/image1.png")));
-		lblNewLabel.setBounds(0, 0, 721, 613);
+		lblNewLabel.setBounds(0, 0, 716, 613);
 		frame.getContentPane().add(lblNewLabel);
 		
 		
