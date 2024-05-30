@@ -8,12 +8,15 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Window;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class page3 {
 
 	JFrame frame4;
+	protected Object frame2;
+	protected Object frame3;
 	
 
 	/**
@@ -44,11 +47,21 @@ public class page3 {
 	 */
 	private void initialize() {
 		frame4 = new JFrame();
+		frame4.getContentPane().setForeground(Color.WHITE);
+		frame4.setBackground(Color.WHITE);
 		frame4.setBounds(100, 100, 1266, 752);
 		frame4.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame4.getContentPane().setLayout(null);
 		
 		JButton btnRetour = new JButton("5");
+		btnRetour.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				page8 nouvellepage = new page8();
+		        frame4.dispose();
+		        // Rendez le deuxième cadre visible
+		        nouvellepage.frame9.setVisible(true);
+			}
+		});
 		btnRetour.setForeground(Color.RED);
 		btnRetour.setFont(new Font("Inter", Font.PLAIN, 20));
 		btnRetour.setBackground(Color.LIGHT_GRAY);
@@ -56,6 +69,16 @@ public class page3 {
 		frame4.getContentPane().add(btnRetour);
 		
 		JButton btnRetour_1 = new JButton("2");
+		btnRetour_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+        	
+		        page5 nouvellepage = new page5();
+		        frame4.dispose();
+		        // Rendez le deuxième cadre visible
+		        nouvellepage.frame6.setVisible(true);
+			}
+		});
 		btnRetour_1.setForeground(Color.RED);
 		btnRetour_1.setFont(new Font("Inter", Font.PLAIN, 20));
 		btnRetour_1.setBackground(Color.LIGHT_GRAY);
@@ -80,6 +103,14 @@ public class page3 {
 		frame4.getContentPane().add(btnRetour_1_1);
 		
 		JButton btnRetour_1_1_1 = new JButton("3");
+		btnRetour_1_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				page6 nouvellepage = new page6();
+		        frame4.dispose();
+		        // Rendez le deuxième cadre visible
+		        ((Window) nouvellepage.frame7).setVisible(true);
+			}
+		});
 		btnRetour_1_1_1.setForeground(Color.RED);
 		btnRetour_1_1_1.setFont(new Font("Inter", Font.PLAIN, 20));
 		btnRetour_1_1_1.setBackground(Color.LIGHT_GRAY);
@@ -87,6 +118,14 @@ public class page3 {
 		frame4.getContentPane().add(btnRetour_1_1_1);
 		
 		JButton btnRetour_2 = new JButton("4");
+		btnRetour_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				page7 nouvellepage = new page7();
+		        frame4.dispose();
+		        // Rendez le deuxième cadre visible
+		        ((Window) nouvellepage.frame8).setVisible(true);
+			}
+		});
 		btnRetour_2.setForeground(Color.RED);
 		btnRetour_2.setFont(new Font("Inter", Font.PLAIN, 20));
 		btnRetour_2.setBackground(Color.LIGHT_GRAY);
@@ -94,6 +133,7 @@ public class page3 {
 		frame4.getContentPane().add(btnRetour_2);
 		
 		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBackground(Color.WHITE);
 		lblNewLabel.setIcon(new ImageIcon(page3.class.getResource("/images/page32.png")));
 		lblNewLabel.setBounds(10, 10, 1205, 676);
 		frame4.getContentPane().add(lblNewLabel);
