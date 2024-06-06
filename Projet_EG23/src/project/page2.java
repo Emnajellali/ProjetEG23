@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.Window;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -43,12 +44,10 @@ public class page2 {
 	private JTextField textField_8;
 	private JTextField textField_9;
 	private Point imageInitialLocation;
-	// private int sum = 0;
-	 private int nbCombattantsZone1 = 0;
-	    private int nbCombattantsZone2 = 0;
-	    private int nbCombattantsZone3 = 0;
-	    private int nbCombattantsZone4 = 0;
-	    private int nbCombattantsZone5 = 0;
+	
+	
+    private static JTextField[] countFields = new JTextField[5]; // Array to store references to the JTextFields
+    int[] combatantCounts = new int[5];
 	/**
 	 * Launch the application.
 	 */
@@ -76,6 +75,9 @@ public class page2 {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		
+		    
 		frame3 = new JFrame();
 		frame3.getContentPane().setBackground(new Color(30, 144, 255));
 		frame3.setBounds(100, 100, 1464, 636);
@@ -93,7 +95,7 @@ public class page2 {
 		txtRpartirTes.setColumns(10);
 		txtRpartirTes.setBackground(new Color(30, 144, 255));
 		frame3.getContentPane().add(txtRpartirTes);
-
+		
 		JLabel lblImage1 = new JLabel("");
 		lblImage1.setIcon(new ImageIcon(page2.class.getResource("/images/image6.png")));
 		lblImage1.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
@@ -119,10 +121,10 @@ public class page2 {
 				label.setLocation(x, y);
 			}
 		});
-
+		
 		// Add the JLabel to the frame
 		frame3.getContentPane().add(lblImage1);
-
+		
 		JLabel lblImage1_1 = new JLabel("");
 		lblImage1_1.setIcon(new ImageIcon(page2.class.getResource("/images/image6.png")));
 		lblImage1_1.setBorder(BorderFactory.createLineBorder(Color.GREEN, 2));
@@ -290,34 +292,65 @@ public class page2 {
 
 		// Add the JLabel to the frame
 		frame3.getContentPane().add(lblImage1_6);
-
+		
 		JLabel lblImage1_7 = new JLabel("");
 		lblImage1_7.setIcon(new ImageIcon(page2.class.getResource("/images/image6.png")));
 		lblImage1_7.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 		lblImage1_7.setBounds(286, 242, 50, 88);
 		// Add a MouseListener to track the initial location when the mouse is pressed
-		lblImage1_7.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				imageInitialLocation = e.getPoint();
-			}
-		});
+		 lblImage1_7.addMouseListener(new MouseAdapter() {
+	            @Override
+	            public void mousePressed(MouseEvent e) {
+	                imageInitialLocation = e.getPoint();
+	                lblImage1_7.setVisible(true); // Ensure the image is visible while being dragged
+	            }
 
-		// Add a MouseMotionListener to update the position of the JLabel as it is
-		// dragged
-		lblImage1_7.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseDragged(MouseEvent e) {
-				JLabel label = (JLabel) e.getSource();
-				Point location = label.getLocation();
-				int x = location.x - imageInitialLocation.x + e.getX();
-				int y = location.y - imageInitialLocation.y + e.getY();
-				label.setLocation(x, y);
-			}
-		});
+	            @Override
+	            public void mouseReleased(MouseEvent e) {
+	            	/*JLabel label = (JLabel) e.getSource();
+	                Point location = label.getLocation();
+	                for (int i = 0; i < zoneBounds.length; i++) {
+	                    if (zoneBounds[i].contains(location)) {
+	                        // Mettre à jour le compteur de combattants pour cette zone
+	                        combatantCounts[i]++;
+	                        // Mettre à jour le champ de texte correspondant
+	                        JTextField textField = null;
+	                        switch (i) {
+	                            case 0: textField = txtLaBibliothque; break;
+	                            case 1: textField = txtLeBureauDes; break;
+	                            case 2: textField = txtLeQuartierAdministratif; break;
+	                            case 3: textField = txtLesHallesIndustrielles; break;
+	                            case 4: textField = txtLaHalleSportive; break;
+	                        }
+	                        if (textField != null) {
+	                            textField.setText(String.valueOf(combatantCounts[i]));
+	                        }
+	                        break;
+	                    }
+	                }*/
+	                lblImage1_7.setVisible(false); // Make the image invisible when the mouse is released
+	            }
+	        });
 
-		// Add the JLabel to the frame
-		frame3.getContentPane().add(lblImage1_7);
+
+	        // Add a MouseMotionListener to update the position of the JLabel as it is dragged
+	        lblImage1_7.addMouseMotionListener(new MouseMotionAdapter() {
+	            @Override
+	            public void mouseDragged(MouseEvent e) {
+	                JLabel label = (JLabel) e.getSource();
+	                Point location = label.getLocation();
+	                int x = location.x - imageInitialLocation.x + e.getX();
+	                int y = location.y - imageInitialLocation.y + e.getY();
+	                label.setLocation(x, y);
+	            }
+	        });
+
+	        // Add the JLabel to the frame
+	        frame3.getContentPane().add(lblImage1_7);
+
+	        frame3.setVisible(true);
+	    
+
 
 		JLabel lblImage1_8 = new JLabel("");
 		lblImage1_8.setIcon(new ImageIcon(page2.class.getResource("/images/image6.png")));
@@ -846,6 +879,37 @@ public class page2 {
 		btnJouer.setFont(new Font("Inter", Font.PLAIN, 20));
 		btnJouer.setBackground(Color.GRAY);
 		btnJouer.setBounds(1135, 374, 173, 65);
-		frame3.getContentPane().add(btnJouer);
+		frame3.getContentPane().add(btnJouer);}
+	
+	private void updateCombatantCount(Point location) {
+	    // Obtenir les limites des JTextField de chaque zone
+	    Rectangle[] textFieldBounds = {
+	        txtLaBibliothque.getBounds(),
+	        txtLeBureauDes.getBounds(),
+	        txtLeQuartierAdministratif.getBounds(),
+	        txtLesHallesIndustrielles.getBounds(),
+	        txtLaHalleSportive.getBounds()
+	    };
+
+	    // Comparer la nouvelle position de l'image avec les limites de chaque zone
+	    for (int i = 0; i < textFieldBounds.length; i++) {
+	        if (textFieldBounds[i].contains(location)) {
+	            // Mettre à jour le compteur de combattants pour cette zone
+	            combatantCounts[i]++;
+	            // Mettre à jour le champ de texte correspondant
+	            JTextField textField = null;
+	            switch (i) {
+	                case 0: textField = txtLaBibliothque; break;
+	                case 1: textField = txtLeBureauDes; break;
+	                case 2: textField = txtLeQuartierAdministratif; break;
+	                case 3: textField = txtLesHallesIndustrielles; break;
+	                case 4: textField = txtLaHalleSportive; break;
+	            }
+	            if (textField != null) {
+	                textField.setText(String.valueOf(combatantCounts[i]));
+	            }
+	            break; // Arrêter la boucle une fois que la zone a été identifiée
+	        }
+	    }
 	}
 }

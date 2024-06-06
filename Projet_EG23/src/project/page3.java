@@ -62,6 +62,23 @@ public class page3 {
 		        nouvellepage.frame9.setVisible(true);
 			}
 		});
+		
+		JButton btnRetour1 = new JButton("Retour");
+		btnRetour1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        	
+        		// Créez une instance de votre deuxième cadre (conn)
+		        page2 nouvellepage = new page2();
+		        frame4.dispose();
+		        // Rendez le deuxième cadre visible
+		        ((Window) nouvellepage.frame3).setVisible(true);
+        	}
+        });
+		btnRetour1.setForeground(Color.RED);
+		btnRetour1.setFont(new Font("Inter", Font.PLAIN, 20));
+		btnRetour1.setBackground(Color.LIGHT_GRAY);
+		btnRetour1.setBounds(539, 575, 173, 55);
+		frame4.getContentPane().add(btnRetour1);
 		btnRetour.setForeground(Color.RED);
 		btnRetour.setFont(new Font("Inter", Font.PLAIN, 20));
 		btnRetour.setBackground(Color.LIGHT_GRAY);
@@ -137,5 +154,6 @@ public class page3 {
 		lblNewLabel.setIcon(new ImageIcon(page3.class.getResource("/images/page32.png")));
 		lblNewLabel.setBounds(10, 10, 1205, 676);
 		frame4.getContentPane().add(lblNewLabel);
+		
 	}
 }
