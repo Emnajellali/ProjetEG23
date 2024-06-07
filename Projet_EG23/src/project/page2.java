@@ -41,7 +41,7 @@ public class page2 {
 	private JTextField txtLesHallesIndustrielles;
 	private JTextField txtLaHalleSportive;
 	private Point imageInitialLocation;
-	private int currentImageId = 1; // Assuming image ID 1 for simplicity	
+	private int currentImageId=0; // Assuming image ID 1 for simplicity	
 
 	public static void main(String[] args) {
 		
@@ -77,7 +77,7 @@ public class page2 {
 		frame3.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame3.getContentPane().setLayout(null);
 				
-		JLabel lblImage1_7_9 = new JLabel("");
+		JLabel lblImage1_7_9 = new JLabel("");  
 	        lblImage1_7_9.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
 	        lblImage1_7_9.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
 	        lblImage1_7_9.setBounds(36, 142, 38, 40);
@@ -111,7 +111,7 @@ int newY = location.y - imageInitialLocation.y + e.getY();
 	           			            			}
 	           			        			});
 
-JLabel lblImage1_7_8 = new JLabel("");
+JLabel lblImage1_7_8 = new JLabel("");  
 lblImage1_7_8.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
 lblImage1_7_8.setBorder(BorderFactory.createLineBorder(Color.GREEN, 2));
 lblImage1_7_8.setBounds(136, 142, 38, 40);
@@ -145,7 +145,7 @@ sourceLabel.setLocation(newX, newY);
 }
 });
 
-JLabel lblImage1_7_7 = new JLabel("");
+JLabel lblImage1_7_7 = new JLabel("");  
 lblImage1_7_7.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
 lblImage1_7_7.setBorder(BorderFactory.createLineBorder(Color.GREEN, 2));
 lblImage1_7_7.setBounds(229, 142, 38, 40);
@@ -179,7 +179,7 @@ sourceLabel.setLocation(newX, newY);
 }
 });
 
-JLabel lblImage1_7_6 = new JLabel("");
+JLabel lblImage1_7_6 = new JLabel("");  
 lblImage1_7_6.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
 lblImage1_7_6.setBorder(BorderFactory.createLineBorder(Color.GREEN, 2));
 lblImage1_7_6.setBounds(319, 142, 38, 40);
@@ -213,7 +213,7 @@ sourceLabel.setLocation(newX, newY);
 }
 });
 
-JLabel lblImage1_7_5 = new JLabel("");
+JLabel lblImage1_7_5 = new JLabel("");  
 lblImage1_7_5.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
 lblImage1_7_5.setBorder(BorderFactory.createLineBorder(Color.GREEN, 2));
 lblImage1_7_5.setBounds(411, 142, 38, 40);
@@ -247,7 +247,7 @@ sourceLabel.setLocation(newX, newY);
 }
 });
 
-JLabel lblImage1_7_4 = new JLabel("");
+JLabel lblImage1_7_4 = new JLabel("");  
 lblImage1_7_4.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
 lblImage1_7_4.setBorder(BorderFactory.createLineBorder(Color.GREEN, 2));
 lblImage1_7_4.setBounds(36, 285, 38, 40);
@@ -281,7 +281,7 @@ sourceLabel.setLocation(newX, newY);
 }
 });
 
-JLabel lblImage1_7_3 = new JLabel("");
+JLabel lblImage1_7_3 = new JLabel("");  
 lblImage1_7_3.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
 lblImage1_7_3.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 lblImage1_7_3.setBounds(136, 285, 38, 40);
@@ -315,7 +315,7 @@ sourceLabel.setLocation(newX, newY);
 }
 });
 
-JLabel lblImage1_7_2 = new JLabel("");
+JLabel lblImage1_7_2 = new JLabel("");  
 lblImage1_7_2.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
 lblImage1_7_2.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 lblImage1_7_2.setBounds(229, 285, 38, 40);
@@ -349,7 +349,7 @@ sourceLabel.setLocation(newX, newY);
 }
 });
 
-JLabel lblImage1_7 = new JLabel("");
+JLabel lblImage1_7 = new JLabel("");  
 lblImage1_7.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
 lblImage1_7.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 lblImage1_7.setBounds(319, 285, 38, 40);
@@ -383,7 +383,7 @@ sourceLabel.setLocation(newX, newY);
 }
 });
 
-JLabel lblImage1_7_1 = new JLabel("");
+JLabel lblImage1_7_1 = new JLabel("");  
 lblImage1_7_1.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
 lblImage1_7_1.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 lblImage1_7_1.setBounds(411, 285, 38, 40);
@@ -417,7 +417,7 @@ sourceLabel.setLocation(newX, newY);
 }
 });
 
-JLabel lblImage1_7_9_1 = new JLabel("");
+JLabel lblImage1_7_9_1 = new JLabel("");  
 lblImage1_7_9_1.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
 lblImage1_7_9_1.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 lblImage1_7_9_1.setBounds(1000, 142, 38, 40);
@@ -451,7 +451,7 @@ int newY = location.y - imageInitialLocation.y + e.getY();
    	            			}
    	        			});
                 
-                JLabel lblImage1_7_9_2_4_4 = new JLabel("");
+                JLabel lblImage1_7_9_2_4_4 = new JLabel("");  
                 lblImage1_7_9_2_4_4.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
                 lblImage1_7_9_2_4_4.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
                 lblImage1_7_9_2_4_4.setBounds(1383, 285, 38, 40);
@@ -486,7 +486,7 @@ int newY = location.y - imageInitialLocation.y + e.getY();
                 	        			});
                 frame3.getContentPane().add(lblImage1_7_9_2_4_4);
                 
-                JLabel lblImage1_7_9_2_4_3 = new JLabel("");
+                JLabel lblImage1_7_9_2_4_3 = new JLabel("");  
                 lblImage1_7_9_2_4_3.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
                 lblImage1_7_9_2_4_3.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
                 lblImage1_7_9_2_4_3.setBounds(1294, 285, 38, 40);
@@ -521,7 +521,7 @@ int newY = location.y - imageInitialLocation.y + e.getY();
                 });
                 frame3.getContentPane().add(lblImage1_7_9_2_4_3);
                 
-                JLabel lblImage1_7_9_2_4_2 = new JLabel("");
+                JLabel lblImage1_7_9_2_4_2 = new JLabel("");  
                 lblImage1_7_9_2_4_2.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
                 lblImage1_7_9_2_4_2.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
                 lblImage1_7_9_2_4_2.setBounds(1200, 285, 38, 40);
@@ -557,7 +557,7 @@ int newY = location.y - imageInitialLocation.y + e.getY();
                 });
                 frame3.getContentPane().add(lblImage1_7_9_2_4_2);
                 
-                JLabel lblImage1_7_9_2_4_1 = new JLabel("");
+                JLabel lblImage1_7_9_2_4_1 = new JLabel("");  
                 lblImage1_7_9_2_4_1.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
                 lblImage1_7_9_2_4_1.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
                 lblImage1_7_9_2_4_1.setBounds(1099, 285, 38, 40);
@@ -592,7 +592,7 @@ int newY = location.y - imageInitialLocation.y + e.getY();
                 });
                 frame3.getContentPane().add(lblImage1_7_9_2_4_1);
                 
-                JLabel lblImage1_7_9_2_4 = new JLabel("");
+                JLabel lblImage1_7_9_2_4 = new JLabel("");  
                 lblImage1_7_9_2_4.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
                 lblImage1_7_9_2_4.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
                 lblImage1_7_9_2_4.setBounds(1000, 285, 38, 40);
@@ -627,7 +627,7 @@ int newY = location.y - imageInitialLocation.y + e.getY();
                 });
                 frame3.getContentPane().add(lblImage1_7_9_2_4);
                 
-                JLabel lblImage1_7_9_2_3 = new JLabel("");
+                JLabel lblImage1_7_9_2_3 = new JLabel("");  
                 lblImage1_7_9_2_3.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
                 lblImage1_7_9_2_3.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
                 lblImage1_7_9_2_3.setBounds(1383, 142, 38, 40);
@@ -662,7 +662,7 @@ int newY = location.y - imageInitialLocation.y + e.getY();
                 });
                 frame3.getContentPane().add(lblImage1_7_9_2_3);
                 
-                JLabel lblImage1_7_9_2_2 = new JLabel("");
+                JLabel lblImage1_7_9_2_2 = new JLabel("");  
                 lblImage1_7_9_2_2.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
                 lblImage1_7_9_2_2.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
                 lblImage1_7_9_2_2.setBounds(1294, 142, 38, 40);
@@ -697,7 +697,7 @@ int newY = location.y - imageInitialLocation.y + e.getY();
                 });
                 frame3.getContentPane().add(lblImage1_7_9_2_2);
                 
-                JLabel lblImage1_7_9_2_1 = new JLabel("");
+                JLabel lblImage1_7_9_2_1 = new JLabel("");  
                 lblImage1_7_9_2_1.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
                 lblImage1_7_9_2_1.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
                 lblImage1_7_9_2_1.setBounds(1200, 142, 38, 40);
@@ -732,7 +732,7 @@ int newY = location.y - imageInitialLocation.y + e.getY();
                 });
                 frame3.getContentPane().add(lblImage1_7_9_2_1);
                 
-                JLabel lblImage1_7_9_2 = new JLabel("");
+                JLabel lblImage1_7_9_2 = new JLabel("");  
                 lblImage1_7_9_2.setIcon(new ImageIcon(page2.class.getResource("/images/image05.jpeg")));
                 lblImage1_7_9_2.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
                 lblImage1_7_9_2.setBounds(1099, 142, 38, 40);
@@ -783,7 +783,7 @@ frame3.getContentPane().add(lblImage1_7_7);
 frame3.getContentPane().add(lblImage1_7_8);
 frame3.getContentPane().add(lblImage1_7_9);
 
-				JLabel lblNewLabel = new JLabel("");
+				JLabel lblNewLabel = new JLabel("");  
 				lblNewLabel.setIcon(new ImageIcon(page2.class.getResource("/images/page4.png")));
 				lblNewLabel.setBounds(487, 95, 475, 370);
 				frame3.getContentPane().add(lblNewLabel);
@@ -912,27 +912,6 @@ frame3.getContentPane().add(lblImage1_7_9);
         panel.setBounds(9, 465, 1401, 124);
         frame3.getContentPane().add(panel);
 
-        // Adding empty labels (possibly for images or placeholders)
-        JLabel lblNewLabel_1 = new JLabel("");
-        lblNewLabel_1.setBounds(481, 93, 169, 94);
-        frame3.getContentPane().add(lblNewLabel_1);
-
-        JLabel lblNewLabel_2 = new JLabel("");
-        lblNewLabel_2.setBounds(789, 218, 146, 94);
-        frame3.getContentPane().add(lblNewLabel_2);
-
-        JLabel lblNewLabel_3 = new JLabel("");
-        lblNewLabel_3.setBounds(722, 317, 234, 73);
-        frame3.getContentPane().add(lblNewLabel_3);
-
-        JLabel lblNewLabel_4 = new JLabel("");
-        lblNewLabel_4.setBounds(557, 197, 146, 50);
-        frame3.getContentPane().add(lblNewLabel_4);
-
-        JLabel lblNewLabel_5 = new JLabel("");
-        lblNewLabel_5.setBounds(589, 246, 118, 84);
-        frame3.getContentPane().add(lblNewLabel_5);
-
         
     }
 
@@ -963,24 +942,48 @@ frame3.getContentPane().add(lblImage1_7_9);
     private JButton createZoneButton(String text, int x, int y, String zone) {
         JButton button = new JButton(text);
         button.setBounds(x, y, 38, 40);
-        button.addActionListener(e -> updateDatabase(currentImageId, zone));
+        
+        button.addActionListener(e -> updateDatabase(++currentImageId, zone));
         return button;
     }
 
+//    private void updateDatabase(int imageId, String zone) {
+//        String url = "jdbc:mysql://localhost:3306/EG23";
+//        String user = "root"; // Replace with your database username
+//        String password = ""; // Replace with your database password
+//
+//        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+//            String query = "UPDATE INTO combattants (image_id, zone) VALUES (?, ?)";
+//            PreparedStatement stmt = conn.prepareStatement(query);
+//            stmt.setInt(1, imageId);
+//            stmt.setString(2, zone);
+//            stmt.executeUpdate();
+//            System.out.println("Updated database with image ID " + imageId + " in zone " + zone);
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
     private void updateDatabase(int imageId, String zone) {
         String url = "jdbc:mysql://localhost:3306/EG23";
         String user = "root"; // Replace with your database username
         String password = ""; // Replace with your database password
 
-        try (Connection conn = DriverManager.getConnection(url, user, password)) {
-            String query = "INSERT INTO emplacement (image_id, zone) VALUES (?, ?)";
-            PreparedStatement stmt = conn.prepareStatement(query);
-            stmt.setInt(1, imageId);
-            stmt.setString(2, zone);
-            stmt.executeUpdate();
-            System.out.println("Updated database with image ID " + imageId + " in zone " + zone);
+        String query = "UPDATE combattants SET zone = ? WHERE id = ?";
+
+        try (Connection conn = DriverManager.getConnection(url, user, password);
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, zone);
+            stmt.setInt(2, imageId);
+            int rowsUpdated = stmt.executeUpdate();
+            
+            if (rowsUpdated > 0) {
+                System.out.println("Updated database with image ID " + imageId + " in zone " + zone);
+            } else {
+                System.out.println("No record found with image ID " + imageId);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
 }
