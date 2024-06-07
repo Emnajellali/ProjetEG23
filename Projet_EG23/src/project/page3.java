@@ -17,7 +17,7 @@ public class page3 {
 	JFrame frame4;
 	protected Object frame2;
 	protected Object frame3;
-	
+	 private page2 previousPage; // Reference to the previous page
 
 	/**
 	 * Launch the application.
@@ -40,6 +40,7 @@ public class page3 {
 	 */
 	public page3() {
 		initialize();
+		this.previousPage = previousPage; // Store reference to the previous page
 	}
 
 	/**
