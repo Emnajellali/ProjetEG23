@@ -1,16 +1,21 @@
 package project;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Window;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class page3 {
 
@@ -57,10 +62,12 @@ public class page3 {
 		JButton btnRetour = new JButton("5");
 		btnRetour.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				  fetchCombatantsByZone("halle sportif");
 				page8 nouvellepage = new page8();
 		        frame4.dispose();
 		        // Rendez le deuxième cadre visible
 		        nouvellepage.frame9.setVisible(true);
+		      
 			}
 		});
 		
@@ -69,6 +76,7 @@ public class page3 {
         	public void actionPerformed(ActionEvent e) {
         	
         		// Créez une instance de votre deuxième cadre (conn)
+        		
 		        page2 nouvellepage = new page2();
 		        frame4.dispose();
 		        // Rendez le deuxième cadre visible
@@ -90,7 +98,7 @@ public class page3 {
 		btnRetour_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-        	
+				fetchCombatantsByZone("BDE");
 		        page5 nouvellepage = new page5();
 		        frame4.dispose();
 		        // Rendez le deuxième cadre visible
@@ -106,6 +114,7 @@ public class page3 {
 		JButton btnRetour_1_1 = new JButton("1");
 		btnRetour_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				fetchCombatantsByZone("bibliotheque");
 
         	
 		        page4 nouvellepage = new page4();
@@ -123,6 +132,7 @@ public class page3 {
 		JButton btnRetour_1_1_1 = new JButton("3");
 		btnRetour_1_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				 fetchCombatantsByZone("quartier");
 				page6 nouvellepage = new page6();
 		        frame4.dispose();
 		        // Rendez le deuxième cadre visible
@@ -138,6 +148,7 @@ public class page3 {
 		JButton btnRetour_2 = new JButton("4");
 		btnRetour_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				fetchCombatantsByZone("halle indus");
 				page7 nouvellepage = new page7();
 		        frame4.dispose();
 		        // Rendez le deuxième cadre visible
@@ -156,5 +167,37 @@ public class page3 {
 		lblNewLabel.setBounds(10, 10, 1205, 676);
 		frame4.getContentPane().add(lblNewLabel);
 		
+		
+		
 	}
+	private void fetchCombatantsByZone(String zone) {
+        String url = "jdbc:mysql://localhost:3306/EG23";
+        String user = "root"; // Replace with your database username
+        String password = ""; // Replace with your database password
+        String query = "SELECT * FROM combattants WHERE zone = ?";
+
+        try (Connection conn = DriverManager.getConnection(url, user, password);
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, zone);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                int pointsDeVie = rs.getInt("pointsDeVie");
+                int force = rs.getInt("force");
+                int dexterite = rs.getInt("dexterite");
+                int resistance = rs.getInt("resistance");
+                int constitution = rs.getInt("constitution");
+                int initiative = rs.getInt("initiative");
+                String intelligenceArtificielle = rs.getString("intelligenceArtificielle");
+
+                // Display or process the combatant's data
+                System.out.println("ID: " + id + ", Points de Vie: " + pointsDeVie + ", Force: " + force
+                        + ", Dexterité: " + dexterite + ", Résistance: " + resistance + ", Constitution: "
+                        + constitution + ", Initiative: " + initiative + ", IA: " + intelligenceArtificielle);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
