@@ -7,12 +7,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -20,6 +19,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -28,12 +28,16 @@ public class conn {
     JFrame frame1;
     private JTextField txtInscription;
     private JTextField txtNomEtPrenom;
-    private JTextField txtMotDePasse;
+    private JPasswordField txtMotDePasse; // Change JTextField to JPasswordField
     private JLabel lblNewLabel;
     private JButton btnJouer;
     private JPanel panel;
     public JFrame frame2;
     private JComboBox<String> comboBox;
+
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/EG23";
+    private static final String DB_USER = "root";
+    private static final String DB_PASSWORD = "";
 
     /**
      * Launch the application.
@@ -106,7 +110,7 @@ public class conn {
         frame1.getContentPane().add(txtNomEtPrenom);
         txtNomEtPrenom.setColumns(10);
 
-        txtMotDePasse = new JTextField();
+        txtMotDePasse = new JPasswordField(); // Use JPasswordField
         txtMotDePasse.setText("Mot de passe");
         txtMotDePasse.setHorizontalAlignment(SwingConstants.CENTER);
         txtMotDePasse.setForeground(new Color(30, 144, 255));
@@ -118,7 +122,7 @@ public class conn {
         txtMotDePasse.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
-                if (txtMotDePasse.getText().equals("Mot de passe")) {
+                if (new String(txtMotDePasse.getPassword()).equals("Mot de passe")) {
                     txtMotDePasse.setText("");
                     removePlaceholderStyle(txtMotDePasse);
                 }
@@ -126,7 +130,7 @@ public class conn {
 
             @Override
             public void focusLost(FocusEvent e) {
-                if (txtMotDePasse.getText().isEmpty()) {
+                if (new String(txtMotDePasse.getPassword()).isEmpty()) {
                     addPlaceholderStyle(txtMotDePasse);
                     txtMotDePasse.setText("Mot de passe");
                 }
@@ -150,7 +154,7 @@ public class conn {
             public void actionPerformed(ActionEvent e) {
                 // Enregistrer les données dans la base de données
                 String name = txtNomEtPrenom.getText();
-                String password = txtMotDePasse.getText();
+                String password = new String(txtMotDePasse.getPassword());
                 String filiere = (String) comboBox.getSelectedItem();
                 saveToDatabase(name, password, filiere);
 
@@ -177,13 +181,9 @@ public class conn {
     }
 
     private void saveToDatabase(String name, String password, String filiere) {
-        String url = "jdbc:mysql://localhost:3306/EG23"; // Changez "mydatabase" par le nom de votre base de données
-        String user = "root"; // Changez "root" par votre nom d'utilisateur MySQL
-        String pass = ""; // Changez "" par votre mot de passe MySQL
-
         String sql = "INSERT INTO users(name, password, filiere) VALUES(?, ?, ?)";
 
-        try (Connection conn = DriverManager.getConnection(url, user, pass);
+        try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, name);
             pstmt.setString(2, password);
@@ -194,7 +194,6 @@ public class conn {
         }
     }
 
-    
     private void addPlaceholderStyle(JTextField textField) {
         textField.setFont(new Font("Inter", Font.ITALIC, 15));
         textField.setForeground(Color.GRAY);
@@ -203,6 +202,18 @@ public class conn {
     private void removePlaceholderStyle(JTextField textField) {
         textField.setFont(new Font("Inter", Font.PLAIN, 15));
         textField.setForeground(Color.BLACK);
+    }
+
+    private void addPlaceholderStyle(JPasswordField passwordField) {
+        passwordField.setEchoChar((char) 0); // Show text
+        passwordField.setFont(new Font("Inter", Font.ITALIC, 15));
+        passwordField.setForeground(Color.GRAY);
+    }
+
+    private void removePlaceholderStyle(JPasswordField passwordField) {
+        passwordField.setEchoChar('•'); // Show bullets
+        passwordField.setFont(new Font("Inter", Font.PLAIN, 15));
+        passwordField.setForeground(Color.BLACK);
     }
 
     private static class __Tmp {
